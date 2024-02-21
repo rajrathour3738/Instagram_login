@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/Instagramproject/favicon2.ico">
+
+</head>
+<body>
+    <div class="container">
+        <img src="111.jpg" alt="Instagram Logo">
+        <form action="#">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button type="submit">Log In</button>
+        </form>
+        <p class="forgot-password">Forgot password?</p>
+        <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const username = document.querySelector('input[type="text"]').value;
+                const password = document.querySelector('input[type="password"]').value;
+
+                if (username.trim() === '' || password.trim() === '') {
+                    alert('Please enter both username and password.');
+                } else {
+                    // Simulating a successful login
+                    alert('Login successful! Redirecting to your Instagram feed.');
+                    window.location.href = 'https://www.instagram.com/';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
